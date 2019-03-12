@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  targetNamespace="http://webservice">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified"
+                   targetNamespace="http://webservice"
+                   xmlns:impl="http://webservice"
+                   xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/">
+            <xs:complexType abstract="false" name="testApp">
+                <xs:sequence>
+                    <xs:element name="params">
+                        <xs:complexType ns1:arrayType="map">
+                            <xs:sequence>
+                                <xs:element maxOccurs="unbounded" minOccurs="0" name="item">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element minOccurs="0" name="key" type="xs:string"/>
+                                            <xs:element minOccurs="0" name="value" type="xs:anyType"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+</wsdl:definitions>
